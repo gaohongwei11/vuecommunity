@@ -1,8 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Hello from '@/components/Hello'
 import home from '@/components/home'
-import test from '@/components/test'
 import content from '@/components/content'
 import user from '@/components/user'
 import login from '@/components/login'
@@ -16,47 +14,37 @@ export default new Router({
   mode: 'history',
   routes: [
     {
-      path: '/Hello',
-      name: 'Hello',
-      component: Hello
-    },
-    {
-      path: '/',
+      path: '/vuecommunitytest',
       name: 'home',
       component: home
     },
     {
-      path: '/test',
-      name: 'test',
-      component: test
-    },
-    {
-      path: '/content',
+      path: '/vuecommunitytest/content',
       name: 'content',
       component: content
     },
     {
-      path: '/user',
+      path: '/vuecommunitytest/user',
       name: 'user',
       component: user
     },
     {
-      path: '/login',
+      path: '/vuecommunitytest/login',
       name: 'login',
       component: login
     },
     {
-      path: '/publish',
+      path: '/vuecommunitytest/publish',
       name: 'publish',
       component: publish
     },
     {
-      path: '/personal',
+      path: '/vuecommunitytest/personal',
       name: 'personal',
       component: personal
     },
     {
-      path: '/message',
+      path: '/vuecommunitytest/message',
       name: 'message',
       component: message
     }

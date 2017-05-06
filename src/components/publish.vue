@@ -12,8 +12,8 @@
         </main>
         <mu-dialog :open="!accesstoken" title="提示：">
             请先登录
-            <mu-flat-button slot="actions" primary to="/home" label="取消" />
-            <mu-flat-button slot="actions" primary to="/login" label="确定" />
+            <mu-flat-button slot="actions" primary to="/vuecommunitytest" label="取消" />
+            <mu-flat-button slot="actions" primary to="/vuecommunitytest/login" label="确定" />
         </mu-dialog>
         <mu-dialog :open="publish" title="提示：">
             {{tips}}
@@ -26,7 +26,6 @@
 import axios from 'axios'
 import marked from 'marked'
 import BottomNavigation from './commom/BottomNavigation.vue'
-// 'Access Token: 55b176a9-8a6a-4b0b-b13c-1c04e9db5d1a'
 export default {
     components: {
         BottomNavigation

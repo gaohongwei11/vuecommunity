@@ -12,7 +12,7 @@
                     <mu-list-item v-if="user_msg.recent_topics" title="最近主题" toggleNested :open="false">
                         <mu-icon class="icon" slot="left" value="insert_drive_file" />
                         <mu-list-item
-                        :to="{path:'/content',query:{id:item.id}}"
+                        :to="{path:'/vuecommunitytest/content',query:{id:item.id}}"
                         v-for="item in user_msg.recent_topics"
                         :key="item.id"
                         slot="nested"
@@ -24,7 +24,7 @@
                     <mu-list-item v-if="user_msg.recent_replies" title="最近回复" toggleNested :open="false">
                         <mu-icon class="icon" slot="left" value="drafts" />
                         <mu-list-item
-                        :to="{path:'/content',query:{id:item.id}}"
+                        :to="{path:'/vuecommunitytest/content',query:{id:item.id}}"
                         v-for="item in user_msg.recent_replies"
                         :key="item.id"
                         slot="nested"
@@ -36,7 +36,7 @@
                     <mu-list-item v-if="user_msg.collect_topics" title="收藏主题" toggleNested :open="false">
                         <mu-icon class="icon" slot="left" value="folder" />
                         <mu-list-item
-                        :to="{path:'/content',query:{id:item.id}}"
+                        :to="{path:'/vuecommunitytest/content',query:{id:item.id}}"
                         v-for="item in user_msg.collect_topics"
                         :key="item.id"
                         slot="nested"
@@ -77,7 +77,7 @@ export default {
             let author_name = this.$route.query.user
             let url = 'http://www.vue-js.com/api/v1/user/' + author_name
             axios.get(url).then(function(response) {
-                console.log(response.data.data)
+                // console.log(response.data.data)
                 that.user_msg = response.data.data
             })
         },

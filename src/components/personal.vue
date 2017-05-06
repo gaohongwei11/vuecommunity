@@ -20,7 +20,7 @@
                     :open="false">
                         <mu-icon class="icon" slot="left" value="insert_drive_file" />
                         <mu-list-item
-                        :to="{path:'/content',query:{id:item.id}}"
+                        :to="{path:'/vuecommunitytest/content',query:{id:item.id}}"
                         v-for="item in user_msg.recent_topics"
                         :key="item.id"
                         slot="nested"
@@ -37,7 +37,7 @@
                     :open="false">
                         <mu-icon class="icon" slot="left" value="drafts" />
                         <mu-list-item
-                        :to="{path:'/content',query:{id:item.id}}"
+                        :to="{path:'/vuecommunitytest/content',query:{id:item.id}}"
                         v-for="item in user_msg.recent_replies"
                         :key="item.id"
                         slot="nested"
@@ -54,7 +54,7 @@
                     :open="false">
                         <mu-icon class="icon" slot="left" value="folder" />
                         <mu-list-item
-                        :to="{path:'/content',query:{id:item.id}}"
+                        :to="{path:'/vuecommunitytest/content',query:{id:item.id}}"
                         v-for="item in user_msg.collect_topics"
                         :key="item.id"
                         slot="nested"
@@ -127,7 +127,7 @@ export default {
             localStorage.setItem('user_id', '')
             localStorage.setItem('loginname', '')
             this.$router.push({
-                path: 'home'
+                path: '/vuecommunitytest'
             })
         }
     }

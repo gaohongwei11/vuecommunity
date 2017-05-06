@@ -9,18 +9,13 @@
             </mu-tabs>
             <!-- 未读消息列表 -->
             <ul v-if="accesstoken" class="lists" v-show="activeTab === 'hasnot_read'">
-                <router-link
-                :to="{path:'/content',query:{id:item.topic.id}}"
-                tag="li"
-                class="list"
-                v-for="item in hasnot_read_messages"
-                :key="item.id">
+                <router-link :to="{path:'/vuecommunitytest/content',query:{id:item.topic.id}}" tag="li" class="list" v-for="item in hasnot_read_messages" :key="item.id">
                     <div class="user">
                         <img :src="item.author.avatar_url" alt="user">
                         <span>{{item.author.loginname}}</span>
                     </div>
                     <div class="content">
-                        <h2 v-html="item.reply.content"></h2>
+                        <h2 v-html="markdownChange(item.reply.content)"></h2>
                         <p>来自：《{{item.topic.title}}》</p>
                     </div>
                     <div class="timer">
@@ -31,18 +26,13 @@
             </ul>
             <!-- 已读消息列表 -->
             <ul v-if="accesstoken" class="lists" v-show="activeTab === 'has_read'">
-                <router-link
-                :to="{path:'/content',query:{id:item.topic.id}}"
-                tag="li"
-                class="list"
-                v-for="item in has_read_messages"
-                :key="item.id">
+                <router-link :to="{path:'/vuecommunitytest/content',query:{id:item.topic.id}}" tag="li" class="list" v-for="item in has_read_messages" :key="item.id">
                     <div class="user">
                         <img :src="item.author.avatar_url" alt="user">
                         <span>{{item.author.loginname}}</span>
                     </div>
                     <div class="content">
-                        <h2 v-if="item.reply.content" v-html="item.reply.content"></h2>
+                        <h2 v-if="item.reply.content" v-html="markdownChange(item.reply.content)"></h2>
                         <h2 v-if="!item.reply.content">此内容已被作者删除</h2>
                         <p>来自：《{{item.topic.title}}》</p>
                     </div>
@@ -54,14 +44,7 @@
             </ul>
             <p class="tips" v-if="!accesstoken">请先登录</p>
             <!-- 全部标记已读 -->
-            <mu-raised-button
-            class="btn"
-            v-if="count"
-            v-show="activeTab === 'hasnot_read'"
-            @click="mark_all"
-            label="标记全部已读"
-            icon="done_all"
-            primary/>
+            <mu-raised-button class="btn" v-if="count" v-show="activeTab === 'hasnot_read'" @click="mark_all" label="标记全部已读" icon="done_all" primary/>
         </main>
         <BottomNavigation></BottomNavigation>
     </div>
@@ -80,28 +63,23 @@ export default {
             activeTab: 'hasnot_read',
             accesstoken: '',
             count: null,
-            hasnot_read_messages:[],
-            has_read_messages:[]
+            hasnot_read_messages: [],
+            has_read_messages: []
         }
     },
     created() {
         this.accesstoken = localStorage.getItem("accesstoken")
-        if(this.accesstoken){
+        if (this.accesstoken) {
             this.getData()
         }
     },
     filters: {
-            timeago(val) {
-                let time = new Date(val)
-                let thistime = timeago()
-                return thistime.format(time, 'zh_CN') //将UTC时间转换格式---> 几天前,几小时前...
-            }
-            // ,
-            // markdown(val){
-            //     let content = marked(val)
-            //     return content
-            // }
-        },
+        timeago(val) {
+            let time = new Date(val)
+            let thistime = timeago()
+            return thistime.format(time, 'zh_CN') //将UTC时间转换格式---> 几天前,几小时前...
+        }
+    },
     methods: {
         handleTabChange(val) {
             this.activeTab = val
@@ -114,21 +92,17 @@ export default {
                 // console.log(response.data.data)
                 that.hasnot_read_messages = response.data.data.hasnot_read_messages
                 that.has_read_messages = response.data.data.has_read_messages
-                //格式转换
-                that.hasnot_read_messages.forEach(function(item){
-                    item.reply.content = marked(item.reply.content)
-                })
-                that.has_read_messages.forEach(function(item){
-                    item.reply.content = marked(item.reply.content)
-                })
             })
-            
+
             axios.get('http://www.vue-js.com/api/v1/message/count?accesstoken=' + this.accesstoken).then(function(response) {
                 //获取未读消息数量
                 that.count = response.data.data
             })
         },
-        mark_all(){
+        markdownChange(val) {
+            return marked(val)
+        },
+        mark_all() {
             let that = this
             axios.post('http://www.vue-js.com/api/v1/message/mark_all', {
                     accesstoken: that.accesstoken
@@ -147,20 +121,22 @@ export default {
     text-align: center;
     height: 5rem;
 }
-.wrapper{
+
+.wrapper {
     display: flex;
     flex-direction: column;
 }
+
 main {
     margin: 5rem 0;
-    flex:1;
+    flex: 1;
     display: flex;
     flex-direction: column;
 }
 
 .activeTab {
     position: relative;
-    border-top: 1px solid rgba(255,255,255,.1);
+    border-top: 1px solid rgba(255, 255, 255, .1);
 }
 
 .count {
@@ -179,55 +155,65 @@ main {
     padding: 1rem;
     overflow-y: auto;
 }
-.btn{
+
+.btn {
     margin: 1rem;
 }
-.list{
+
+.list {
     display: flex;
     justify-content: space-between;
     background-color: #f8f8f8;
     padding: 1rem;
     margin-bottom: 1rem;
 }
-.user{
+
+.user {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 6rem;
 }
-.user>img{
+
+.user>img {
     height: 4rem;
     width: 4rem;
     border-radius: 50%;
 }
-.user>span{
+
+.user>span {
     text-align: center;
     max-width: 100%;
     word-wrap: break-word;
     word-break: normal;
 }
-.content{
-    flex:1;
+
+.content {
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
-.content>h2{
+
+.content>h2 {
     font-weight: 700;
     font-size: 16px;
 }
-.content>p{
+
+.content>p {
     color: #999;
     font-size: 12px;
 }
-.timer{
+
+.timer {
     margin-left: 1rem;
     width: 5rem;
     display: flex;
     align-items: center;
     justify-content: flex-end;
 }
-.tips{
+
+.tips {
     padding: 1rem;
 }
 </style>

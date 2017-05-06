@@ -36,7 +36,7 @@ export default {
                     localStorage.setItem('loginname', response.data.loginname)
                         // alert(localStorage.getItem("accesstoken"))
                     that.$router.push({
-                        path: 'personal'
+                        path: '/vuecommunitytest/personal'
                     })
 
                 })

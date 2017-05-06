@@ -11,7 +11,6 @@
                     <span class="tag" v-else-if="data.good">精华</span>
                     {{data.title}}
                 </h1>
-                <!-- <span>收藏主题</span> -->
                 <mu-checkbox
                 v-if="accesstoken"
                 v-model="collect"
@@ -34,9 +33,8 @@
                 <li class="reply" v-for="(list,index) in data.replies" :key="list.id">
                     <section class="msg">
                         <div class="author">
-                            <!-- <img :src="list.author.avatar_url" alt="user"> -->
                             <router-link
-                            :to="{path:'/user',query:{user:list.author.loginname}}"
+                            :to="{path:'/vuecommunitytest/user',query:{user:list.author.loginname}}"
                             :src="list.author.avatar_url"
                             tag="img"
                             alt="user">
@@ -76,7 +74,7 @@
         <mu-dialog v-if="!accesstoken" :open="dialog" title="提示：" @close="close">
             请先登录，登录后即可点赞。
             <mu-flat-button slot="actions" @click="close" primary label="取消" />
-            <mu-flat-button to="/login" slot="actions" @click="close" primary label="确定" />
+            <mu-flat-button to="/vuecommunitytest/login" slot="actions" @click="close" primary label="确定" />
         </mu-dialog>
         <mu-dialog :open="isReply" title="提示：" @close="close">
             {{tips}}
@@ -95,7 +93,10 @@ export default {
             return {
                 accesstoken: '',
                 user_id: '',
-                data: {},
+                data: {
+                    author:{},
+                    replies:{}
+                },
                 dialog: false,
                 reply: '',
                 single_reply: '',
@@ -220,7 +221,7 @@ export default {
                         accesstoken: that.accesstoken
                     })
                     .then(function(response) {
-                        console.log(response.data)
+                        // console.log(response.data)
                         that.getData()
                     })
             },
@@ -274,7 +275,7 @@ export default {
                         topic_id: that.data.id
                     })
                     .then(function(response) {
-                        console.log(response.data)
+                        // console.log(response.data)
                     })
             },
             off_collect() {
@@ -285,7 +286,7 @@ export default {
                         topic_id: that.data.id
                     })
                     .then(function(response) {
-                        console.log(response.data)
+                        // console.log(response.data)
                     })
             }
         }

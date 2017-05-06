@@ -1,29 +1,21 @@
 # Vue.js 中文社区
 ---
 ## 前言
----
-项目灵感来源于各种 Vue 版的 cnode 社区，索性我也写一个练练手。
-既然是用 Vue 写，那就选择 Vue.js 中文社区了，感谢 Vue.js 中文社区提供的API。
+
+线上预览地址：[Vue.js 中文社区](http://g1217300470.coding.me/vuecommunitytest)
+基于 vue2.0 写的单页面应用 Vue.js 中文社区，感谢 Vue.js 中文社区提供的API。
 
 ## 技术栈
----
-- vue-cli
+
 - vue2.0
+- vue-cli
 - vue-router
 - axios
 - muse-ui
 - marked
 
-## 执行项目
----
-> 安装依赖
-> npm install
-
-> 启动服务
-> npm run dev
-
 ## 实现功能
----
+
 - [x] 首页列表
 - [x] 下拉加载
 - [x] 用户信息（点击头像）
@@ -39,3 +31,12 @@
 - [x] 未读消息全部标为已读
 - [x] 个人中心
 - [x] 主题切换
+
+## 执行项目
+
+> 安装依赖
+> npm install
+> 启动服务
+> npm run dev
+> 本地打开
+> localhost:8090/vuecommunitytest
