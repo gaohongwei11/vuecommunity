@@ -141,7 +141,8 @@ main {
 
 .count {
     position: absolute;
-    left: 4rem;
+    left: 10%;
+    top:20%;
     background-color: #ff5252;
     width: 2rem;
     height: 2rem;

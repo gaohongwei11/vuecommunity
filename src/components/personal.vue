@@ -7,7 +7,7 @@
             <span class="name">{{user_msg.loginname}}</span>
             <div class="timer">
                 <span>积分：{{user_msg.score}}</span>
-                <span>注册时间；{{user_msg.create_at | timeago}}</span>
+                <span>注册时间：{{user_msg.create_at | timeago}}</span>
             </div>
             <!-- 最近主题、回复、收藏 -->
             <section class="content">

@@ -7,6 +7,8 @@
 
 线上预览地址：[Vue.js 中文社区](http://g1217300470.coding.me/vuecommunitytest)  
 
+( PC 端请切换至 Chrome 手机模式预览)  
+
 项目地址：  
 
 
