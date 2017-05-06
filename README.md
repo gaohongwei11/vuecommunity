@@ -26,6 +26,11 @@
 - muse-ui
 - marked
 
+
+## 预览  
+
+![预览gif](img/vue_com.gif)  ![预览gif](img/vue_com1.gif)  ![预览gif](img/vue_com2.gif)  ![预览gif](img/vue_com3.gif)  
+
 ## 实现功能
 
 - [x] 首页列表
