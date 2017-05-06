@@ -3,8 +3,17 @@
 
 ## 前言  
 
+基于 vue2.0 写的单页面应用 Vue.js 中文社区，感谢 Vue.js 中文社区提供的API。  
+
 线上预览地址：[Vue.js 中文社区](http://g1217300470.coding.me/vuecommunitytest)  
-基于 vue2.0 写的单页面应用 Vue.js 中文社区，感谢 Vue.js 中文社区提供的API。
+
+项目地址：  
+
+
+- [GitHub地址](https://github.com/gaohongwei11/vuecommunity)  
+- [Coding地址](https://coding.net/u/G1217300470/p/VueCommunity/git)  
+
+如果对您有帮助，您可以右上角star支持一下，谢谢！ ^_^
 
 ## 技术栈
 
@@ -39,5 +48,5 @@
 > npm install  
 > 启动服务  
 > npm run dev  
-> 本地打开  
+> 运行  
 > localhost:8090/vuecommunitytest  
