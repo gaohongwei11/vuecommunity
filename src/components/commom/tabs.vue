@@ -120,6 +120,7 @@ export default {
 <style scoped>
 .main {
     overflow: auto;
+    /*overflow-scrolling: touch;*/
     border: 1px solid #d9d9d9;
 }
 
