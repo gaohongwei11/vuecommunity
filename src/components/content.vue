@@ -147,7 +147,7 @@ export default {
                 // 主题详情
                 let id = this.$route.query.id
                 let that = this
-                let url = 'http://www.vue-js.com/api/v1/topic/' + id
+                let url = 'https://www.vue-js.com/api/v1/topic/' + id
                 axios.get(url).then(function(response) {
                     that.data = response.data.data
                     // console.log(that.data)
@@ -163,7 +163,7 @@ export default {
             isCollected() {
                 //收藏
                 let that = this
-                axios.get('http://www.vue-js.com/api/v1/user/' + that.loginname)
+                axios.get('https://www.vue-js.com/api/v1/user/' + that.loginname)
                     .then(function(response) {
                         // 获取收藏主题数组
                         let arr = response.data.data.collect_topics
@@ -180,6 +180,7 @@ export default {
             },
             goBack() {
                 this.$router.go(-1)
+                // this.$router.back()
             },
             open() {
                 this.dialog = true
@@ -192,7 +193,7 @@ export default {
                 // 添加评论
                 let id = this.$route.query.id
                 let that = this
-                axios.post('http://www.vue-js.com/api/v1/topic/' + id + '/replies', {
+                axios.post('https://www.vue-js.com/api/v1/topic/' + id + '/replies', {
                         accesstoken: that.accesstoken,
                         content: that.reply
                     })
@@ -217,7 +218,7 @@ export default {
                 //点赞
                 let that = this
                 let reply_id = that.data.replies[index].id
-                axios.post('http://www.vue-js.com/api/v1/reply/' + reply_id + '/ups', {
+                axios.post('https://www.vue-js.com/api/v1/reply/' + reply_id + '/ups', {
                         accesstoken: that.accesstoken
                     })
                     .then(function(response) {
@@ -229,7 +230,7 @@ export default {
                 // 对评论的回复
                 let id = this.$route.query.id
                 let that = this
-                axios.post('http://www.vue-js.com/api/v1/topic/' + id + '/replies', {
+                axios.post('https://www.vue-js.com/api/v1/topic/' + id + '/replies', {
                         accesstoken: that.accesstoken,
                         content: that.single_reply,
                         reply_id: that.data.replies[index].id
@@ -270,7 +271,7 @@ export default {
             on_collect() {
                 //收藏主题
                 let that = this
-                axios.post('http://www.vue-js.com/api/v1/topic/collect', {
+                axios.post('https://www.vue-js.com/api/v1/topic/collect', {
                         accesstoken: that.accesstoken,
                         topic_id: that.data.id
                     })
@@ -281,7 +282,7 @@ export default {
             off_collect() {
                 // 取消收藏
                 let that = this
-                axios.post('http://www.vue-js.com/api/v1/topic/de_collect ', {
+                axios.post('https://www.vue-js.com/api/v1/topic/de_collect ', {
                         accesstoken: that.accesstoken,
                         topic_id: that.data.id
                     })

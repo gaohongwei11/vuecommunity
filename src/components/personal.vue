@@ -105,7 +105,7 @@ export default {
     methods: {
         getData() {
             let that = this
-            axios.post('http://www.vue-js.com/api/v1/accesstoken', {
+            axios.post('https://www.vue-js.com/api/v1/accesstoken', {
                     accesstoken: that.accesstoken
                 })
                 .then(function(response) {
@@ -116,7 +116,7 @@ export default {
         },
         getUserData() {
             let that = this
-            axios.get('http://www.vue-js.com/api/v1/user/' + that.user.loginname)
+            axios.get('https://www.vue-js.com/api/v1/user/' + that.user.loginname)
                 .then(function(response) {
                     that.user_msg = response.data.data
                     // console.log(that.user_msg)

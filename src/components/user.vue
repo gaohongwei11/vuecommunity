@@ -75,7 +75,7 @@ export default {
         getData() {
             let that = this
             let author_name = this.$route.query.user
-            let url = 'http://www.vue-js.com/api/v1/user/' + author_name
+            let url = 'https://www.vue-js.com/api/v1/user/' + author_name
             axios.get(url).then(function(response) {
                 // console.log(response.data.data)
                 that.user_msg = response.data.data

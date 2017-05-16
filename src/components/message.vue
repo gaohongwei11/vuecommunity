@@ -86,7 +86,7 @@ export default {
         },
         getData() {
             let that = this
-            let url = 'http://www.vue-js.com/api/v1/messages?accesstoken=' + this.accesstoken
+            let url = 'https://www.vue-js.com/api/v1/messages?accesstoken=' + this.accesstoken
             axios.get(url).then(function(response) {
                 //获取已读和未读消息
                 // console.log(response.data.data)
@@ -94,7 +94,7 @@ export default {
                 that.has_read_messages = response.data.data.has_read_messages
             })
 
-            axios.get('http://www.vue-js.com/api/v1/message/count?accesstoken=' + this.accesstoken).then(function(response) {
+            axios.get('https://www.vue-js.com/api/v1/message/count?accesstoken=' + this.accesstoken).then(function(response) {
                 //获取未读消息数量
                 that.count = response.data.data
             })
@@ -104,7 +104,7 @@ export default {
         },
         mark_all() {
             let that = this
-            axios.post('http://www.vue-js.com/api/v1/message/mark_all', {
+            axios.post('https://www.vue-js.com/api/v1/message/mark_all', {
                     accesstoken: that.accesstoken
                 })
                 .then(function(response) {

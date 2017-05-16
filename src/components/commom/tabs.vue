@@ -57,7 +57,7 @@ export default {
             styleObj: {
                 backgroundColor: '#999'
             },
-            url: 'http://www.vue-js.com/api/v1/topics?tab=all',
+            url: 'https://www.vue-js.com/api/v1/topics?tab=all',
             page: 1
         }
     },
@@ -102,7 +102,7 @@ export default {
             this.nomore = false //切换tab，重置
 
             this.activeTab = val
-            this.url = 'http://www.vue-js.com/api/v1/topics?tab=' + val
+            this.url = 'https://www.vue-js.com/api/v1/topics?tab=' + val
             this.getData()
         },
         getData() {
@@ -120,7 +120,6 @@ export default {
 <style scoped>
 .main {
     overflow: auto;
-    /*overflow-scrolling: touch;*/
     border: 1px solid #d9d9d9;
 }
 

@@ -61,7 +61,7 @@ export default {
                 // console.log(that.title)
                 // console.log(that.tab)
                 // console.log(that.content)
-            axios.post('http://www.vue-js.com/api/v1/topics', {
+            axios.post('https://www.vue-js.com/api/v1/topics', {
                     accesstoken: that.accesstoken,
                     title: that.title,
                     tab: that.tab,

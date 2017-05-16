@@ -25,7 +25,7 @@ export default {
         login() {
             // 'Access Token: 55b176a9-8a6a-4b0b-b13c-1c04e9db5d1a'
             let that = this
-            axios.post('http://www.vue-js.com/api/v1/accesstoken', {
+            axios.post('https://www.vue-js.com/api/v1/accesstoken', {
                     accesstoken: that.val
                 })
                 .then(function(response) {

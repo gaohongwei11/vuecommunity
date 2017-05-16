@@ -1,51 +1,44 @@
 <template>
-    <div>
-        <mu-tabs :value="theme" @change="changeTheme">
-            <mu-tab title="LIGHT (DEFAULT)" value="light" />
-            <mu-tab title="DARK" value="dark" />
-            <mu-tab title="CARBON" value="carbon" />
-            <mu-tab title="TEAL" value="teal" />
-        </mu-tabs>
-        <h1>2222222222</h1>
-        <h1>2222222222</h1>
-        <h1>2222222222</h1>
-        <h1>2222222222</h1>
-        <h1>2222222222</h1>
+    <div class="wrapper">
+        <h1>title</h1>
+        <div class="main" ref="myElement">
+            <h1 v-for="num in list">{{num}}</h1>
+        </div>
     </div>
 </template>
 <script>
-import light from '!raw-loader!muse-ui/dist/theme-default.css'
-import dark from '!raw-loader!muse-ui/dist/theme-dark.css'
-import carbon from '!raw-loader!muse-ui/dist/theme-carbon.css'
-import teal from '!raw-loader!muse-ui/dist/theme-teal.css'
 export default {
     data() {
             return {
-                theme: 'light',
-                themes: {
-                    light,
-                    dark,
-                    carbon,
-                    teal
-                }
+                list:100,
+                scroll:null
             }
         },
+        mounted(){
+            //监听滚动值
+            this.$refs.myElement.addEventListener('scroll', this.getData)
+
+            //赋值滚动值
+            // this.getData()
+        },
         methods: {
-            changeTheme(theme) {
-                this.theme = theme
-                const styleEl = this.getThemeStyle()
-                styleEl.innerHTML = this.themes[theme] || ''
-            },
-            getThemeStyle() {
-                const themeId = 'muse-theme'
-                let styleEl = document.getElementById(themeId)
-                if (styleEl) return styleEl
-                styleEl = document.createElement('style')
-                styleEl.id = themeId
-                document.body.appendChild(styleEl)
-                return styleEl
+            getData(){
+                //监听滚动值
+                let scroll = this.$refs.myElement.scrollTop
+                console.log(scroll)
+
+
+                //赋值滚动值
+                // this.$refs.myElement.scrollTop = 562
             }
         }
 
 }
 </script>
+<style scoped>
+.main{
+    border:1px solid black;
+    max-height: 300px;
+    overflow-y: auto;
+}
+</style>

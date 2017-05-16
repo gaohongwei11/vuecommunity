@@ -2,7 +2,7 @@
     <div class="hello">
         <mu-appbar class="title" title="Vue.js 中文社区">
             <mu-icon-button slot="left">
-                <img class="logo" src="http://www.vue-js.com/public/images/vue.png">
+                <img class="logo" src="https://www.vue-js.com/public/images/vue.png">
             </mu-icon-button>
             <mu-icon-menu slot="right" icon="more_vert" :value="theme" @change="changeTheme">
                 <mu-menu-item title="LIGHT" value="light" />

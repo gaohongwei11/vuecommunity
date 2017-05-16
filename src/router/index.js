@@ -7,12 +7,18 @@ import login from '@/components/login'
 import publish from '@/components/publish'
 import personal from '@/components/personal'
 import message from '@/components/message'
+import test from '@/components/test'
 
 Vue.use(Router)
 
 export default new Router({
   mode: 'history',
   routes: [
+    {
+      path: '/vuecommunitytest/test',
+      name: 'test',
+      component: test
+    },
     {
       path: '/vuecommunitytest',
       name: 'home',

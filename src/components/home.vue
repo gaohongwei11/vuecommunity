@@ -1,7 +1,9 @@
 <template>
     <div class="wrapper">
         <isheader class="header"></isheader>
+        <!-- <keep-alive> -->
         <tabs class="tab"></tabs>
+        <!-- </keep-alive> -->
         <BottomNavigation></BottomNavigation>
     </div>
 </template>
