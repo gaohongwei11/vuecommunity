@@ -15,7 +15,9 @@
 - [GitHub地址](https://github.com/gaohongwei11/vuecommunity)  
 - [Coding地址](https://coding.net/u/G1217300470/p/VueCommunity/git)  
 
-如果对您有帮助，您可以右上角star支持一下，谢谢！ ^_^
+如果对您有帮助，您可以右上角star支持一下，谢谢！ ^_^  
+
+为自己打个小广告：最近求个**web前端**的坑，有意可联系QQ/微信：1217300470
 
 ## 技术栈
 
