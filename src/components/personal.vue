@@ -123,9 +123,9 @@ export default {
                 })
         },
         logout() {
-            localStorage.setItem('accesstoken', '')
-            localStorage.setItem('user_id', '')
-            localStorage.setItem('loginname', '')
+            localStorage.removeItem('accesstoken')
+            localStorage.removeItem('user_id')
+            localStorage.removeItem('loginname')
             this.$router.push({
                 path: '/vuecommunitytest'
             })
