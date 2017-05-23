@@ -6,9 +6,7 @@ import router from './router'
 import MuseUI from 'muse-ui'
 import 'muse-ui/dist/muse-ui.css'
 import 'muse-ui/dist/theme-teal.css'
-import scroll from 'vue-infinite-scroll'
 Vue.use(MuseUI)
-Vue.use(scroll)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
