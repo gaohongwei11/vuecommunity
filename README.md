@@ -5,11 +5,9 @@
 
 基于 vue2.0 写的单页面应用 Vue.js 中文社区，感谢 Vue.js 中文社区提供的API。  
 
-线上预览地址：[Vue.js 中文社区](http://g1217300470.coding.me/vuecommunitytest)  ( PC 端请切换至 Chrome 手机模式预览)  
+线上预览地址：[Vue.js 中文社区](http://g1217300470.coding.me/vuecommunitytest)  
 
-或扫描二维码预览：  
-
-![预览gif](img/qrcode.png)  
+( PC 端请切换至 Chrome 手机模式预览)  
 
 项目地址：  
 
@@ -17,9 +15,7 @@
 - [GitHub地址](https://github.com/gaohongwei11/vuecommunity)  
 - [Coding地址](https://coding.net/u/G1217300470/p/VueCommunity/git)  
 
-如果对您有帮助，您可以右上角star支持一下，谢谢！ ^_^  
-
-为自己打个小广告：最近求个**web前端**的坑，有意可联系QQ/微信：1217300470  
+如果对您有帮助，您可以右上角star支持一下，谢谢！ ^_^
 
 ## 技术栈
 
@@ -29,11 +25,6 @@
 - axios
 - muse-ui
 - marked
-
-
-## 预览  
-
-![预览gif](img/vue_com.gif)  ![预览gif](img/vue_com1.gif)  ![预览gif](img/vue_com2.gif)  ![预览gif](img/vue_com3.gif)  
 
 ## 实现功能
 

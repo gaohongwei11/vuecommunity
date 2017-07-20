@@ -1,5 +1,5 @@
 <template>
-    <div class="demo-infinite-container main">
+    <div ref="myElement" class="demo-infinite-container main">
         <!-- tabs -->
         <mu-tabs class="tabs" :value="activeTab" @change="handleTabChange">
             <mu-tab value="all" title="全部" />
@@ -58,14 +58,20 @@ export default {
                 backgroundColor: '#999'
             },
             url: 'https://www.vue-js.com/api/v1/topics?tab=all',
-            page: 1
+            page: 1,
+            scrollValue:null
         }
     },
     created() {
         this.getData()
     },
     mounted() {
+        this.$refs.myElement.addEventListener('scroll',this.getScroll)
         this.scroller = this.$el
+        // this.getScroll()
+    },
+    update(){
+        scrollValue = 200
     },
     filters: {
         timeago(val) {
@@ -75,6 +81,12 @@ export default {
         }
     },
     methods: {
+        getScroll(){
+            // this.scrollValue = 200
+            // this.$refs.myElement.scrollTop = this.scrollValue
+            this.scrollValue = this.$refs.myElement.scrollTop
+            console.log(this.scrollValue)
+        },
         loadMore() {
             if (!this.nomore) {
                 this.loading = true
@@ -136,6 +148,9 @@ export default {
 }
 .mu-tab-link,.mu-tab-active{
     white-space: nowrap;
+}
+.mu-list{
+    padding: 0;
 }
 .list {
     display: flex;
